@@ -21,3 +21,4 @@ How to do a similar project from scratch:
     - src/main/scala/Main: the app logic (download + do the spark task)
 
 That's all!!
+
