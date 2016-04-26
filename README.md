@@ -1,4 +1,4 @@
-# helloSpark1
+# Hello Spark: Project 1
 Spark training project 1
 
 What you will learn
