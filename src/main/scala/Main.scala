@@ -24,7 +24,10 @@ object Main {
 		val resultRdd = sc
 			.textFile(STORY_FILE)									//instruct the DAG that it should read from this text file
 				.map(line => line.replaceAll("[^A-Za-z0-9 ]"," ")) 	//textFile(..) will give you a stream of lines. Replace all non alphanumeric chars to space
-					.flatMap(line => line.split(" "))				//split by words
+					.flatMap(line => line.split(" "))				//split to words. Since they are multiple lines, and we're splitting each line by space
+																	//it will create a bi-dimensional array a[row][word_position_in_row]
+																	//we don't need that, so we flatten the bi-dimensional array into a single dimensional one
+																	//by using .flatMap
 						.filter(word => word!="")					//no need to count empty word
 						.map(word => (word,1))						//make a touple (word,1). the word will be the key, and 1 will be the value
 							.reduceByKey(_+_)						//sum up all the values (1) for each key (grouped)
