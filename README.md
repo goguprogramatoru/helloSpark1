@@ -20,5 +20,5 @@ How to do a similar project from scratch:
     - src/main/resources/log4j.properties: custom logger to reduce the logging output of spark to WARN,ERROR
     - src/main/scala/Main: the app logic (download + do the spark task)
 
-That's all!!
+That's all !
 
